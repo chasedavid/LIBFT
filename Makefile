@@ -6,7 +6,7 @@
 #    By: cfarnswo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/09/18 16:43:33 by cfarnswo          #+#    #+#              #
-#    Updated: 2017/10/09 10:51:07 by cfarnswo         ###   ########.fr        #
+#    Updated: 2017/10/09 11:46:43 by cfarnswo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -87,12 +87,8 @@ $(NAME):$(OBJ)
 $(OBJ):$(SRC)
 	$(CC) $(CFLAGS) $(SRC)
 
-test:
-	$(CC) -o out $(MAIN) $(NAME) 
-
 clean:
 	/bin/rm -rf $(OBJ)
-	/bin/rm -rf out
 	
 fclean: clean
 	/bin/rm -rf $(NAME)
