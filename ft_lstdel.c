@@ -6,7 +6,7 @@
 /*   By: cfarnswo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/06 10:54:28 by cfarnswo          #+#    #+#             */
-/*   Updated: 2017/10/09 16:57:28 by cfarnswo         ###   ########.fr       */
+/*   Updated: 2017/10/09 17:00:14 by cfarnswo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,5 @@ void			ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 		free(current);
 		current = NULL;
 	}
-	alst = NULL;
+	temp = NULL;
 }
