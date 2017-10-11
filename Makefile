@@ -6,7 +6,7 @@
 #    By: cfarnswo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/09/18 16:43:33 by cfarnswo          #+#    #+#              #
-#    Updated: 2017/10/09 11:46:43 by cfarnswo         ###   ########.fr        #
+#    Updated: 2017/10/11 09:23:35 by cfarnswo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,6 +47,7 @@ FILES=	./ft_memset				\
 		./ft_memalloc			\
 		./ft_memdel				\
 		./ft_strnew				\
+		./ft_strclr				\
 		./ft_strdel				\
 		./ft_striter			\
 		./ft_striteri			\
