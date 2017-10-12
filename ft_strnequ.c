@@ -6,7 +6,7 @@
 /*   By: cfarnswo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/02 09:57:25 by cfarnswo          #+#    #+#             */
-/*   Updated: 2017/10/12 10:00:34 by cfarnswo         ###   ########.fr       */
+/*   Updated: 2017/10/12 10:05:54 by cfarnswo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ int			ft_strnequ(char const *s1, char const *s2, size_t n)
 		return (0);
 	while (*(s1 + i) == *(s2 + i) && (i < n))
 	{
+		++i;
 		if (*(s1 + i) != *(s2 + i))
 			return (0);
-		++i;
 	}
 	return (1);
 }
