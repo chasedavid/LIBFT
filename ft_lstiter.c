@@ -6,7 +6,7 @@
 /*   By: cfarnswo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/07 11:36:46 by cfarnswo          #+#    #+#             */
-/*   Updated: 2017/10/07 11:44:53 by cfarnswo         ###   ########.fr       */
+/*   Updated: 2017/10/12 07:34:25 by cfarnswo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void		ft_lstiter(t_list *lst, void (*f)(t_list *elem))
 	current = lst;
 	while (current != NULL)
 	{
-		(*f)(lst);
+		(*f)(current);
 		current = current->next;
 	}
 }
