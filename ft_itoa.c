@@ -6,7 +6,7 @@
 /*   By: cfarnswo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/19 19:18:17 by cfarnswo          #+#    #+#             */
-/*   Updated: 2017/10/12 08:15:27 by cfarnswo         ###   ########.fr       */
+/*   Updated: 2017/10/16 15:00:18 by cfarnswo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char			*ft_itoa(int n)
 	char			*mem;
 
 	index = placevalues(n);
-	if (!(mem = (char*)malloc(index * (sizeof(char)))))
+	if (!(mem = (char*)malloc((1 + index) * (sizeof(char)))))
 		return (NULL);
 	mem[index--] = '\0';
 	if (n == -2147483648 && (mem[index--] = '8'))
@@ -49,9 +49,7 @@ char			*ft_itoa(int n)
 		mem[index] = '-';
 	}
 	else
-	{
 		while (index >= 0 && (mem[index--] = '0' + n % 10))
 			n /= 10;
-	}
 	return (mem);
 }

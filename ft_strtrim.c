@@ -6,7 +6,7 @@
 /*   By: cfarnswo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/02 12:06:09 by cfarnswo          #+#    #+#             */
-/*   Updated: 2017/10/15 20:58:13 by cfarnswo         ###   ########.fr       */
+/*   Updated: 2017/10/16 16:22:28 by cfarnswo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ char		*ft_strtrim(char const *s)
 
 	i = 0;
 	j = 0;
+	if (ft_strlen(s) == 0)
+		return (ft_strdup(""));
 	size = ft_strlen(s);
 	if (!(mem = (char *)malloc((size + 1) * sizeof(char))))
 		return (NULL);

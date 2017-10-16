@@ -6,7 +6,7 @@
 /*   By: cfarnswo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/28 17:02:18 by cfarnswo          #+#    #+#             */
-/*   Updated: 2017/10/16 03:56:50 by cfarnswo         ###   ########.fr       */
+/*   Updated: 2017/10/16 10:59:32 by cfarnswo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,17 +24,14 @@ char		*ft_strnstr(const char *big, const char *little, size_t len)
 	temp_l = (char *)little;
 	if (*little == '\0')
 		return ((char*)big);
-	while (*big && len)
+	while (*big && (i = len))
 	{
-		i = len;
 		if (*big == *little)
 		{
 			temp_b = (char *)big;
 			while ((*big++ == *little++) && i-- > 0)
-			{
 				if (!(*little))
 					return (temp_b);
-			}
 		}
 		--len;
 		big = temp++;
