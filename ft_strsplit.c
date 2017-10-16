@@ -6,13 +6,13 @@
 /*   By: cfarnswo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/04 11:32:35 by cfarnswo          #+#    #+#             */
-/*   Updated: 2017/10/05 08:36:11 by cfarnswo         ###   ########.fr       */
+/*   Updated: 2017/10/16 02:30:35 by cfarnswo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	static	word_counter(char const *s, char c)
+static int	word_counter(char const *s, char c)
 {
 	int		word_count;
 	int		i;
@@ -20,8 +20,6 @@ int	static	word_counter(char const *s, char c)
 	i = 0;
 	if (s[0] == c)
 		word_count = 0;
-	else
-		word_count = 1;
 	while (s[i])
 	{
 		if (s[i] != c && s[i - 1] == c)
@@ -31,7 +29,7 @@ int	static	word_counter(char const *s, char c)
 	return (word_count);
 }
 
-int	static	word_size(char const *s, char c)
+static int	word_size(char const *s, char c)
 {
 	int		i;
 
@@ -46,24 +44,26 @@ int	static	word_size(char const *s, char c)
 char		**ft_strsplit(char const *s, char c)
 {
 	int		word_count;
-	int		word_index;
+	int		w_index;
 	int		i;
 	char	**mem;
 
+	if (!s)
+		return (NULL);
 	word_count = word_counter(s, c);
-	word_index = 0;
+	w_index = 0;
 	if (!(mem = (char **)malloc((word_count + 1) * sizeof(char *))))
-		return NULL;
-	while (word_index < word_count)
+		return (NULL);
+	while (w_index < word_count)
 	{
 		i = 0;
-		mem[word_index] = (char *)malloc((word_size(s, c) + 1) * (sizeof(char)));
+		mem[w_index] = (char *)malloc((word_size(s, c) + 1) * (sizeof(char)));
 		while (*s == c)
 			++s;
-		while (*s != c)	
-			mem[word_index][i++] = *s++;
-		mem[word_index++][i++] = '\0';
+		while (*s != c)
+			mem[w_index][i++] = *s++;
+		mem[w_index++][i++] = '\0';
 	}
-	mem[word_index] = NULL;
+	mem[w_index] = NULL;
 	return (mem);
 }

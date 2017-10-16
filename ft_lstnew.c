@@ -6,7 +6,7 @@
 /*   By: cfarnswo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/06 07:59:49 by cfarnswo          #+#    #+#             */
-/*   Updated: 2017/10/06 09:24:33 by cfarnswo         ###   ########.fr       */
+/*   Updated: 2017/10/12 08:34:08 by cfarnswo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 t_list			*ft_lstnew(void const *content, size_t content_size)
 {
 	t_list		*node;
-	
+
 	if (!(node = (t_list *)malloc(sizeof(t_list))))
 		return (NULL);
 	if (content == NULL)
