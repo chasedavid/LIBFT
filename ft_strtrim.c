@@ -6,13 +6,13 @@
 /*   By: cfarnswo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/02 12:06:09 by cfarnswo          #+#    #+#             */
-/*   Updated: 2017/10/05 10:53:26 by cfarnswo         ###   ########.fr       */
+/*   Updated: 2017/10/15 20:58:13 by cfarnswo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	static	whitespace(char c)
+static int	whitespace(char c)
 {
 	if (c == ' ' || c == '\t' || c == '\n')
 		return (1);
@@ -23,18 +23,27 @@ int	static	whitespace(char c)
 char		*ft_strtrim(char const *s)
 {
 	char	*mem;
-	int		size;
+	size_t	size;
+	size_t	i;
+	size_t	j;
 
+	i = 0;
+	j = 0;
 	size = ft_strlen(s);
 	if (!(mem = (char *)malloc((size + 1) * sizeof(char))))
 		return (NULL);
-	while (*s)
+	if (*s)
 	{
-		while (whitespace(s[0]) == 1)
-			++s;
-		while (whitespace(*s) == 1 && whitespace(*(s + 1)) != 1)
-			*mem++ = *s++;
+		while (whitespace(s[j]) == 1)
+			++j;
+		while (whitespace(s[size - 1]) == 1)
+			--size;
+		while (i < (size - j))
+		{
+			mem[i] = s[j + i];
+			++i;
+		}
 	}
-	*mem = '\0';
+	mem[i] = '\0';
 	return (mem);
 }
