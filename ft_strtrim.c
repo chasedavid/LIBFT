@@ -6,7 +6,7 @@
 /*   By: cfarnswo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/02 12:06:09 by cfarnswo          #+#    #+#             */
-/*   Updated: 2017/10/16 17:22:25 by cfarnswo         ###   ########.fr       */
+/*   Updated: 2017/10/16 20:44:42 by cfarnswo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,33 +23,25 @@ static int	whitespace(char c)
 char		*ft_strtrim(char const *s)
 {
 	char	*mem;
-	size_t	size;
-	size_t	i;
-	size_t	j;
+	int		size;
+	int		i;
+	int		j;
 
-	i = 0;
+	i = -1;
 	j = 0;
-	if (ft_strcmp(s, "") == 0)
-		return (ft_strdup(s));
-	size = ft_strlen(s);
+	if (!s)
+		return (NULL);
+	size = (int)ft_strlen(s);
 	if (!(mem = (char *)malloc((size + 1) * sizeof(char))))
 		return (NULL);
 	if (*s)
 	{
 		while (whitespace(s[j]) == 1)
 			++j;
-		if (j == size)
-		{
-			mem[0] = '\0';
-			return (mem);
-		}
-		while (whitespace(s[size - 1]) == 1)
+		while (whitespace(s[size - 1]) == 1 && (j != size))
 			--size;
-		while (i < (size - j))
-		{
+		while (++i < (size - j))
 			mem[i] = s[j + i];
-			++i;
-		}
 	}
 	mem[i] = '\0';
 	return (mem);
