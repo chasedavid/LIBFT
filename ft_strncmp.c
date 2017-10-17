@@ -6,7 +6,7 @@
 /*   By: cfarnswo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/27 10:14:01 by cfarnswo          #+#    #+#             */
-/*   Updated: 2017/10/16 10:33:14 by cfarnswo         ###   ########.fr       */
+/*   Updated: 2017/10/16 17:42:39 by cfarnswo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 int			ft_strncmp(const char *s1, const char *s2, size_t n)
 {
+	if (n == 0)
+		return (0);
 	while (--n && *s1 && *s2)
 	{
 		if (*s1 != *s2)

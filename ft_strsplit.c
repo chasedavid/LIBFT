@@ -6,7 +6,7 @@
 /*   By: cfarnswo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/04 11:32:35 by cfarnswo          #+#    #+#             */
-/*   Updated: 2017/10/16 02:30:35 by cfarnswo         ###   ########.fr       */
+/*   Updated: 2017/10/16 19:23:17 by cfarnswo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,10 @@ static int	word_counter(char const *s, char c)
 	int		i;
 
 	i = 0;
-	if (s[0] == c)
+	if (s[0] == c || s[0] == '\0')
 		word_count = 0;
+	else
+		word_count = 1;
 	while (s[i])
 	{
 		if (s[i] != c && s[i - 1] == c)
@@ -48,7 +50,7 @@ char		**ft_strsplit(char const *s, char c)
 	int		i;
 	char	**mem;
 
-	if (!s)
+	if (s == NULL)
 		return (NULL);
 	word_count = word_counter(s, c);
 	w_index = 0;
