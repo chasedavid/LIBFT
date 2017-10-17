@@ -16,8 +16,8 @@ void		*ft_memalloc(size_t size)
 {
 	char	*mem;
 
-	if (!(mem = malloc(size + 1)))
+	if (!(mem = malloc(size)))
 		return (NULL);
-	ft_bzero(mem, size + 1);
+	ft_bzero(mem, size);
 	return (mem);
 }
