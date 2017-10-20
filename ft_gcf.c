@@ -14,6 +14,8 @@ int			ft_gcf(unsigned int a, unsigned int b)
 {
 	unsigned int		temp;
 
+	if (a == 0 || b == 0)
+		return (0);
 	if (b > a)
 	{
 		temp = a;

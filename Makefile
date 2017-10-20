@@ -76,6 +76,8 @@ FILES=	./ft_memset				\
 		./ft_strrev				\
 		./ft_power				\
 		./ft_gcf				\
+		./ft_num_placevalues			\
+		./ft_lcm				\
 
 SRC=$(addsuffix .c, $(FILES))
 OBJ=$(addsuffix .o, $(FILES))
